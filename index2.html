@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mason Jar Candle</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Small local styles to scope layout for this demo page */
+    body { min-height: 100vh; display:flex; align-items:center; justify-content:center; }
+    .jar-page { width: 100%; max-width: 980px; padding: 36px; box-sizing: border-box; }
+    .controls { display:flex; gap:12px; align-items:center; margin-bottom:18px; }
+    .back-link { color: rgba(255,255,255,0.9); text-decoration:none; font-size:14px; }
+    .btn { background: rgba(255,255,255,0.06); color: #fff; border: 1px solid rgba(255,255,255,0.08); padding:8px 12px; border-radius:8px; cursor:pointer; }
+    .hint { margin-top:18px; text-align:center; color: rgba(255,255,255,0.66); font-size:13px; }
+    main.jar-scene { display:flex; align-items:center; justify-content:center; flex-direction:column; }
+  </style>
+</head>
+<body>
+  <div class="jar-page">
+    <div class="controls">
+      <a href="index.html" class="back-link">← Back to previous candle</a>
+      <button id="toggle-style" class="btn">Toggle Mood</button>
+    </div>
+
+    <main class="jar-scene">
+      <div class="jar-wrapper">
+        <div class="jar">
+          <div class="jar-glass"></div>
+          <div class="jar-rim"></div>
+
+          <div class="jar-contents">
+            <div class="wax-pool"></div>
+            <div class="wick small-wick"></div>
+            <div class="flame small-flame">
+              <div class="flame-inner"></div>
+            </div>
+            <div class="glass-reflection"></div>
+          </div>
+        </div>
+
+        <div class="jar-shadow"></div>
+      </div>
+
+      <p class="hint">Mason jar candle with glass refraction, soft rim light and inner glow.</p>
+    </main>
+
+    <script>
+      // small toggle to switch between 'warm' and 'cool' mood
+      const btn = document.getElementById('toggle-style');
+      btn.addEventListener('click', () => {
+        document.body.classList.toggle('cool-mood');
+      });
+    </script>
+  </div>
+</body>
+</html>
